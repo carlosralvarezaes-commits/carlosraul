@@ -68,5 +68,101 @@ public class TiposDeVariables {
         //
         // OPCIONAL: muestra también el tier en el que quedaría (Bronce, Plata, Oro, Platino…).
 
+
+        //ejercicio 1
+        String nombredeljugador = "andres";
+        long nivel = 27;
+        double vida = 20;
+        boolean con_Armadura = true;
+
+        System system = null;
+        system.out.println("\nEjercicio 1 \nla ficha del jugador es:"
+                + nombredeljugador +
+                " nivelxp:" + nivel + " vida:" + vida
+                + "\nTiene armadura?:" + con_Armadura);
+
+
+//ejercicio2
+        double ataquedepikachu = 45.0;
+        double defensadecharmander = 35.0;
+        double resultado = ataquedepikachu - defensadecharmander;
+        long vidadecharmander = 50;
+        double resultado2 = vidadecharmander - resultado;
+
+        system.out.println("\nEjercicio 2 \nAtaque de pikachu = " + ataquedepikachu + "  vida de charmander =  "
+                + vidadecharmander);
+        system.out.println("defensa de charmander= " + defensadecharmander);
+        system.out.println("resultado del ataque=" + resultado);
+        system.out.println("vida restante =" + resultado2);
+
+//ejercicio 3
+        long tiene = 3000;
+        long precioskin = 1200;
+        long resultadoskin = tiene - precioskin;
+
+        system.out.println("\n Ejericio 3 \nLa cuenta tiene= " + tiene + "\nLe quedo= " + resultadoskin);
+
+
+//ejercicio 4
+        long velocidadbaseJinx = 50;
+        long buffBotasdoradas = 30;
+        long resulatadobuffeo = velocidadbaseJinx + buffBotasdoradas;
+
+        system.out.println("\nEjercicio 4 \nLa Velocidad Final de Jinx= " + resulatadobuffeo);
+
+
+//ejercicio 5
+
+
+        double tazaminecraft = 8;
+        double tazaVpucks = 2;
+        double tazaRP = 3;
+
+        double resultadodeMNaVpucks = tazaminecraft * tazaVpucks;
+        double resultadodeMNaRP = tazaminecraft * tazaRP;
+        double resultadodevpucksarp = tazaVpucks * tazaRP;
+
+        system.out.println("\nEjercicio 5 \nResultado de la taza de monedas de minecraft a V-pucks es = " + resultadodeMNaVpucks);
+        system.out.println("resultado de la taza de monedas de minecraft a RP es = " + resultadodeMNaRP);
+        system.out.println("resultado de la taza de V-pucks a RP es = " + resultadodevpucksarp);
+
+//ejercicio 6
+        double kills = 2;
+        double assists = 3;
+        double muertes = 01;
+
+        double calculoKDA= ((kills + assists) /muertes);
+        system.out.println("\nEjercicio 6 \nresultado de KDA es= " + calculoKDA);
+        if (calculoKDA >= 12) system.out.println("Jugador PRO");
+        if (calculoKDA <= 3) system.out.println("Jugador noob");
+        if  (calculoKDA >=8 & calculoKDA<=11) system.out.println("Jugador Promedio");
+        if (calculoKDA >=4 & calculoKDA<6)  system.out.println("Jugador Decente");
+
+        //Completacion de Ejercicio 6
+        double resultadoKDA= calculoKDA;
+
+        if (resultadoKDA >=4 & resultadoKDA <=6) system.out.println("Jugador Gana 100!");
+        else if (resultadoKDA <=3) {system.out.println("Jugador Gana 50!");}
+        if (resultadoKDA >=8 & resultadoKDA <=11) system.out.println("Jugador Gana 250 ");
+        else if (resultadoKDA >=12) {system.out.println("Jugador Gana 350 ");;
+
+        }
+//segun el resultado del KDA me saque una cantidad de puntos en especifico ahora necesitaria,
+//para ello necesito un calculo que haga que <=3 KDA me de 50 pts y eso pase a mis datos para que despues el sistem.out
+//lo imprima
+
+        double puntos=50;
+        if (calculoKDA <=3 ){puntos=50;}
+        else if (calculoKDA >=4 & calculoKDA<=6) {puntos=100;}
+        if (calculoKDA >=8 & calculoKDA<=11) {puntos= 250;}
+        else if (calculoKDA >=12) {puntos= 350;}
+
+        if (puntos >=151 & puntos <=350) system.out.println("Estas en Plata");
+        else if (puntos <=150) system.out.println("Estas en Bronce");
+        if (puntos >=351 & puntos <=500 ) system.out.println("Estas en Oro");
+        else if (puntos >=501) system.out.println("Estas en Platino");
+
+
+
     }
 }
