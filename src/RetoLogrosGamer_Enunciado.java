@@ -213,57 +213,99 @@ import static java.lang.Math.max; public class RetoLogrosGamer_Enunciado {
 
         // ======= TU CÓDIGO AQUÍ =======
         Object string;
-        string = "Fornite";
+        string = "LOL" ;
 
-        double kills = 2;
-        double assists = 3;
-        double muertes = 1;
-        int tiempo = 1;
-        int danhohecho=220;
-        int danhorecibido = 50;
+
+        double kills = 30;
+        double assists = 15;
+        double muertes = 0;
+        int tiempo = 650;
+        int danhohecho=30000;
+        int danhorecibido = 0;
         boolean desconexion = false;
-        int monedas=40 ;
-        int mision = 4;
+        int monedas=200000 ;
+        int mision = 20;
         System system = null;
-        double logros= 0;
-        double score= logros;
+        int score= 0;
+        boolean bad = ( desconexion == true && (tiempo <5));
+        double calculoKDA= ((kills + assists) /max(1,muertes));
 
 
-        boolean bad = desconexion == true && (tiempo <5);
-        double calculoKDA= ((kills + assists) /muertes);
 
 
-        if (bad = true) system.out.println("Rage Quit");
+
+        //RQ
+        if (bad == true) system.out.println("Rage Quit");
 
 
-        if (calculoKDA >= 5 && !bad) system.out.println("Jugador PRO");
-        if (calculoKDA <= 1 && !bad) system.out.println("Jugador noob");
-        if  (calculoKDA >=3 & calculoKDA<=4 && !bad) system.out.println("Jugador Promedio");
-
-        if (calculoKDA >=2 & calculoKDA<3 && !bad)  system.out.println("Jugador Decente");
-
-
-        if (calculoKDA >= 10 && !bad) system.out.println("Logro: Cazador Experto");
-        if (muertes ==0 & kills >=5 && !bad) system.out.println("Logro: Intocable");
-        if (tiempo >60 && !bad) system.out.println("Logro: Maratón Gamer");
-        if (danhohecho > danhorecibido && !bad) system.out.println("Logro: Dominio Total");
-        if (mision>=3 && !bad)system.out.println("Logro: Maestro de las Misiones");
-
-        if (kills >=15 & muertes <=2 && !bad) system.out.println("Victoria Agresiva");
-        if (monedas >=2000 && !bad) system.out.println("Ahorrista de V-Bucks");
+        //KDA
+        if (calculoKDA >= 5 && !bad) {system.out.println("Jugador PRO");score += 50;}
+        if (calculoKDA <= 1 && !bad) {system.out.println("Jugador noob"); score += 10;}
+        if  (calculoKDA >=3 & calculoKDA<=4 && !bad) {system.out.println("Jugador Promedio"); score += 30;}
+        if (calculoKDA >=2 & calculoKDA<3 && !bad)  {system.out.println("Jugador Decente"); score += 20;}
 
 
-        system.out.println("\n\nEstadisiticas:"+"\nkills: "+kills+ "\nAsistencias: " +assists+ "\nMuertes: "+muertes+
-                "\nDaño Hecho: " +danhohecho+"\nDaño Recibido: " + danhorecibido + "\nMisiones Completadas: "+mision);
 
-        if (calculoKDA <=3 ){score = 50;};
-         if (calculoKDA >=4 & calculoKDA<=6) {score = 50;}; 
-        if (calculoKDA >=8 & calculoKDA<=11){score = 50;};
-         if (calculoKDA >=12) {score = 50;};
 
-       if (muertes == 0 && kills == 0 && assists == 0 && tiempo < 2) system.out.println("Partida Invalida:AFK");
-       if ( danhorecibido == 0 & tiempo >= 30) system.out.println("Perfect Defense");
-       if (string== "Fortnite" & kills + assists >= 25 ) system.out.println("Impacto masivo");
+        //logros
+
+        system.out.println("\nLogros:");
+        if (calculoKDA >= 10 && !bad) {system.out.println("Cazador Experto"); score +=50;}
+        if (muertes ==0 & kills >=5 && !bad) {system.out.println("Intocable"); score +=30;}
+        if (tiempo >60 && !bad) {system.out.println ("Maratón Gamer"); score +=20;}
+        if (danhohecho > danhorecibido && !bad) {system.out.println("Dominio Total"); score +=10;}
+        if (mision>=3 && !bad) {system.out.println("Maestro de las Misiones");score +=20;}
+        if ( danhorecibido == 0 & tiempo >= 30) {system.out.println("Perfect Defense");score +=20;}
+
+
+
+
+
+
+
+        if (muertes >= 0 && kills >= 0 && assists >= 0 && tiempo < 2) system.out.println("Partida Invalida:AFK");
+
+
+        //logros Fornite
+        if (string == "Fornite" )system.out.println("\nLogros Fornite:");
+        if (string == "Fornite" && calculoKDA >= 25 && !bad ) {system.out.println("Logros Fornite: Impacto masivo");score +=50;}
+        if (string == "Fornite" & kills >=15 & muertes <=2 && !bad) {system.out.println("Logros Fornite: Victoria Agresiva"); score +=45;}
+        if (string == "Fornite" & monedas >=2000 && !bad) {system.out.println("Logros Fornite: Ahorrista de V-Bucks");score +=15;}
+
+        //logros MC
+        if (string == "Minecraft" )system.out.println("\nLogros Minecraft:");
+        if (string== "Minecraft"&& tiempo>= 45 && danhorecibido == 0 && !bad ) {system.out.println("Logros Minecraft: Superviviente pacífico (MC) 🌿"); score +=10;}
+        if (string== "Minecraft" && mision >= 2 && !bad) {system.out.println("Logros Minecraft: Constructor inalcansable (MC) 🧱");score +=20;}
+
+        //logros LOL
+        if (string == "LOL" )system.out.println("\nLogros LOL:");
+        if (string == "LOL" && danhohecho>=30000 && muertes<=3 && !bad) {system.out.println("Logros LOL: Carry principal (LoL) 🛡️"); score +=40;}
+        if (string =="LOL" && mision>=2 && assists>= 10 && !bad) {system.out.print("Logros LOL: Shotcaller (LoL) 🗣️");score +=20;}
+
+        //logros Pokemon:
+        if (string == "Pokemon" )system.out.println("\nLogros Pokemon:");
+        if (string == "Pokemon" && kills >=6 && danhorecibido<=1000 && !bad) {system.out.println("Logros PKM: Entrenador maestro (PKMN) 🧢");score +=40;}
+        if (string == "Pokemon" && assists>=3 && !bad) {system.out.print("Logros PKM: Apoyo del equipo (PKMN) 🤝"); score +=20;}
+
+
+        //clasificacion
+        system.out.println("\nRango:");
+        if (score >=151 & score <=350) system.out.println("Plata");
+        else if (score <=150) system.out.println("Bronce");
+        if (score >=351 & score <=500 ) system.out.println("Oro");
+        else if (score >=501) system.out.println("Platino");
+
+
+
+        //Estadisticas
+        system.out.println("\nEstadisiticas:"+ "\nKDA:" +calculoKDA +"\nkills: "+kills+ "\nAsistencias: " +assists+ "\nMuertes: "+muertes+
+                "\nDaño Hecho: " +danhohecho+"\nDaño Recibido: " + danhorecibido + "\nMisiones Completadas: "+mision + "\nScore:"+ score);
+
+        //como podemos leer de teclado por nuestra cuenta  EJERCICIO
+        //Hacer una historia con lo de la araña EJERCICIO
+
+
+
 
 
 
