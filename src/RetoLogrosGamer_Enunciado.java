@@ -1,4 +1,4 @@
-public class RetoLogrosGamer_Enunciado {
+import static java.lang.Math.max; public class RetoLogrosGamer_Enunciado {
 
 
     public static void main(String[] args) {
@@ -215,25 +215,60 @@ public class RetoLogrosGamer_Enunciado {
         Object string;
         string = "Fornite";
 
-        int kills = 2;
-        int assists = 3;
-        int muertes = 1;
-        int tiempomin = 1;
-        int objetivos;
-        int dañohecho;
-        int dañorecibido;
-        boolean desconexion = true;
-        int oro;
-
-
-
+        double kills = 2;
+        double assists = 3;
+        double muertes = 1;
+        int tiempo = 1;
+        int danhohecho=220;
+        int danhorecibido = 50;
+        boolean desconexion = false;
+        int monedas=40 ;
+        int mision = 4;
         System system = null;
+        double logros= 0;
+        double score= logros;
 
 
-
-        if (desconexion == true & tiempomin < 5) {}system.out.println("Rage Quit");
-
+        boolean bad = desconexion == true && (tiempo <5);
         double calculoKDA= ((kills + assists) /muertes);
+
+
+        if (bad = true) system.out.println("Rage Quit");
+
+
+        if (calculoKDA >= 5 && !bad) system.out.println("Jugador PRO");
+        if (calculoKDA <= 1 && !bad) system.out.println("Jugador noob");
+        if  (calculoKDA >=3 & calculoKDA<=4 && !bad) system.out.println("Jugador Promedio");
+
+        if (calculoKDA >=2 & calculoKDA<3 && !bad)  system.out.println("Jugador Decente");
+
+
+        if (calculoKDA >= 10 && !bad) system.out.println("Logro: Cazador Experto");
+        if (muertes ==0 & kills >=5 && !bad) system.out.println("Logro: Intocable");
+        if (tiempo >60 && !bad) system.out.println("Logro: Maratón Gamer");
+        if (danhohecho > danhorecibido && !bad) system.out.println("Logro: Dominio Total");
+        if (mision>=3 && !bad)system.out.println("Logro: Maestro de las Misiones");
+
+        if (kills >=15 & muertes <=2 && !bad) system.out.println("Victoria Agresiva");
+        if (monedas >=2000 && !bad) system.out.println("Ahorrista de V-Bucks");
+
+
+        system.out.println("\n\nEstadisiticas:"+"\nkills: "+kills+ "\nAsistencias: " +assists+ "\nMuertes: "+muertes+
+                "\nDaño Hecho: " +danhohecho+"\nDaño Recibido: " + danhorecibido + "\nMisiones Completadas: "+mision);
+
+        if (calculoKDA <=3 ){score = 50;};
+         if (calculoKDA >=4 & calculoKDA<=6) {score = 50;}; 
+        if (calculoKDA >=8 & calculoKDA<=11){score = 50;};
+         if (calculoKDA >=12) {score = 50;};
+
+       if (muertes == 0 && kills == 0 && assists == 0 && tiempo < 2) system.out.println("Partida Invalida:AFK");
+       if ( danhorecibido == 0 & tiempo >= 30) system.out.println("Perfect Defense");
+       if (string== "Fortnite" & kills + assists >= 25 ) system.out.println("Impacto masivo");
+
+
+
+
+
 
 
     }
