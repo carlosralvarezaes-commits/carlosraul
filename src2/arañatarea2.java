@@ -12,17 +12,18 @@ public class arañatarea2 {
         //datos
         double metroscaminados = 0;
         int insectoscomidos = 0;
-        int metrostrepados = 0;
-        int metrosenelaire=0;
+        double metrostrepados = 0;
+        double metrosenelaire=0;
+        String finaldelcamino= "";
 
 
 
         //capitulo 1
-        System.out.print("\uD83C\uDF3F Capítulo 1: El Despertar \nINICIO:te despiertas sobre una hoja húmeda en\n " +
-                "medio del parque . El sol se filtra entre las ramas.\n Sientes hambre y curiosidad. ");
+        System.out.print("\uD83C\uDF3F Capítulo 1: El Despertar \nINICIO:te despiertas sobre una hoja húmeda en" +
+                "medio del\nparque. Eres una Araña de Rincon (Loxosceles laeta),\npero te gusta que te Digan:" + nombre);
 
 
-        System.out.println("\n¿Qué decides hacer? ");
+        System.out.println("\n\n¿Qué decides hacer? ");
         System.out.print("\nEmpezar a caminar:");
         String empezarcaminar = lector.nextLine();
 //1
@@ -86,16 +87,16 @@ public class arañatarea2 {
 
 
                             //1.1.1.1.1(final)
-                            if (pregunta1_1_1_1_X.equals("1")) { {metrosenelaire +=1; metrostrepados+=2;}
+                            if (pregunta1_1_1_1_X.equals("1")) { {metrosenelaire +=1; metrostrepados+=2;}{finaldelcamino+= "Final: Gran Pisoton";}
                                 System.out.println("Al salir del Bolso trepas el pantalon del dueño " +
                                         "\nte ha visto y te ha tirado de su pantalon " +
                                         "\nvas cayendo en el aire y al tocar el piso el dueño" +
                                         "\nte piso..!!");
                             }
 
-//1.1.1.1.2(final)
+                            //1.1.1.1.2(final)
                             else if (pregunta1_1_1_1_X.equals("2")) {
-                                {metrostrepados += 2;}{insectoscomidos+=2;}
+                                {metrostrepados += 2;}{insectoscomidos+=2;}{finaldelcamino+= "Final: Dulce Hogar";}
                                 System.out.println(".....Oh! El bolso ha dejado moverse, y encuentras 2 insectos " +
                                         "\nlos comes y sales del bolso al salir encuentras un hueco en la pared " +
                                         "\nHas decidido vivir en ese lugar, alimentándote de los insectos" +
@@ -109,14 +110,14 @@ public class arañatarea2 {
                             System.out.println("\nVes a lo lejos como la hormiga se va alejando," +
                                     "\nbajas rapidamente para perseguirla en el intento de" +
                                     "\nbajar de la silla eres interceptada por un profesor" +
-                                    "\n el cual te toma fotos y te toma como mascota.");
+                                    "\n el cual te toma fotos y te toma como mascota.");{finaldelcamino+= "Final: Profesor Feliz";}
                         }
 
 
 //1.1.2(final)
 
                     } else if (pregunta1_1_X.equals("2")) {
-                        {metrosenelaire+= 2;}
+                        {metrosenelaire+= 2;}{finaldelcamino+= "Final: Una Tragica Caida";}
                         System.out.println("\nPor quedarte aferrada caes " +
                                 "\ny mueres en una tragica caida.");
                     }
@@ -127,7 +128,9 @@ public class arañatarea2 {
                 System.out.print("\nAl subir no encuentras nada" +
                         "\ninteresante y decides bajar ." +
                         "\nEncuentras un bolso olvidado," +
-                        " \ntal vez haya comida o algun depredador. "); //pregunta de 1.2
+                        " \ntal vez haya comida o algun depredador. ");
+
+                //pregunta de 1.2
                 System.out.println("\n¿Qué decides hacer? ");
                 System.out.println("\n1-Ignoras el bolso?");
                 System.out.println("2-Entras al bolso?");
@@ -135,12 +138,13 @@ public class arañatarea2 {
                 String pregunta1_2_X = lector.nextLine();
 //1.2.1(final)
 
-                if (pregunta1_2_X.equals("1")) {{ metroscaminados+=2;}
+                if (pregunta1_2_X.equals("1")) {{ metroscaminados+=2;}{finaldelcamino+= "Final: Parque de Juegos";}
                     System.out.println("\nSigues caminando por el piso " +
                             "\ny eres pisado por un niño que esta jugando en el parque.");
                 }
 //1.2.2(final)
                 else if (pregunta1_2_X.equals("2")) {{insectoscomidos +=1; metrostrepados+= 3; }
+                    {finaldelcamino+= "Final: Araña Tigre";}
                     System.out.println("\nEn el bolso te encuentras con un insecto,\n" +
                             "lo devoras rapidamente, al salir del bolso \n" +
                             "decides trepar un arbol, al subir te encuentras con\n" +
@@ -150,14 +154,14 @@ public class arañatarea2 {
         }
 
 
-        system.out.println("\nEstadisiticas");
+        System.out.println("\nEstadisiticas");
 
-        system.out.println("Tu Nombre:"+nombre);
-        system.out.println("Final:");
-        system.out.println("Metros Caminados:" +  metroscaminados);
-        system.out.println("Insectos Comidos:" + insectoscomidos );
-        system.out.println("Metros Trepados:" + metrostrepados );
-        system.out.println("Metros en el Aire:" + metrosenelaire);
+        System.out.println("Tu Nombre:"+nombre);
+        System.out.println( finaldelcamino);
+        System.out.println("Metros Caminados:" +  metroscaminados);
+        System.out.println("Insectos Comidos:" + insectoscomidos );
+        System.out.println("Metros Trepados:" + metrostrepados );
+        System.out.println("Metros en el Aire:" + metrosenelaire);
 
 
 
